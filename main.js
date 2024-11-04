@@ -14,3 +14,13 @@ fetch(apiURL)
     displayError("Failed to load products. Please try again later.");
     console.error("Fetch error:", error);
   });
+
+  // Task 3
+  export const productList = [
+    { id: 1, name: 'Laptop', price: 1200 },
+    { id: 2, name: 'Headphones', price: 150 }
+];
+
+export function getProductById(id) {
+    return productList.find(product => product.id === id);
+}
