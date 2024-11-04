@@ -24,3 +24,16 @@ fetch(apiURL)
 export function getProductById(id) {
     return productList.find(product => product.id === id);
 }
+
+// Task 4
+async function getCustomerOrders(customerId) {
+    try {
+        const response = await fetch(`https://api.example.com/orders/${customerId}`);
+        const orders = await response.json();
+        console.log('Orders:', orders);
+    } catch (error) {
+        console.error('Error fetching orders:', error);  // Inspect this in the debugger
+    }
+}
+
+getCustomerOrders(101);
